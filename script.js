@@ -1,3 +1,4 @@
+// Toggle Hamburger for Mobile
 function toggleMenu() {
     const menu = document.querySelector(".menu-links");
     const icon = document.querySelector(".hamburger-icon");
