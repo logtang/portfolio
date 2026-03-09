@@ -12,9 +12,8 @@
     <!-- Nav -->
     <nav id="desktop-nav">
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#skills">Methods</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -24,9 +23,8 @@
           <span></span><span></span><span></span>
         </div>
         <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
           <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#skills" onclick="toggleMenu()">Methods</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
@@ -36,32 +34,38 @@
 
       <!-- Profile / Hero -->
       <section id="profile">
-        <img src="./Assets/portrait.png" alt="Logan Tang's portrait" class="profile-pic">
-        <h1>Logan Tang</h1>
-        <p class="subtitle">studying Statistics and Data Visualization</p>
-        <div class="btn-container">
-          <button class="btn btn-outline" onclick="window.open('./Assets/Resume.pdf')">Download Resume</button>
-          <button class="btn btn-filled" onclick="location.href='./#contact'">Contact</button>
-        </div>
-        <div class="socials">
-          <img src="./Assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/logtang'">
-          <img src="./Assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='www.google.com'">
-        </div>
-      </section>
-
-      <!-- About Me -->
-      <section id="about">
-        <h2 class="section-title">About Me</h2>
         <div class="about-body">
-          <img src="./Assets/headshot.png" alt="Profile picture" class="about-pic">
+          <div class="about-pic-wrap">
+            <img src="./Assets/headshot.png" alt="Profile picture" class="about-pic">
+          </div>
           <div class="about-text">
+            <h1>Logan Tang</h1>
             <h3>Education</h3>
             <p>B.S. Statistics</p>
             <br>
             <p>Summary, Part 1</p>
-            <br>
-            <p>Summary, Part 2</p>
           </div>
+        </div>
+        <div class="profile-contacts">
+          <a href="mailto:log.gstang@gmail.com">
+            <img src="./Assets/email.png" alt="Email" class="contact-icon">
+            log.gstang@gmail.com
+          </a>
+          <span class="sep">·</span>
+          <a href="https://github.com/logtang">
+            <img src="./Assets/github.png" alt="GitHub" class="contact-icon">
+            GitHub
+          </a>
+          <span class="sep">·</span>
+          <a href="www.google.com">
+            <img src="./Assets/linkedin.png" alt="LinkedIn" class="contact-icon">
+            LinkedIn
+          </a>
+          <span class="sep">·</span>
+          <a href="./Assets/Resume.pdf" target="_blank">
+            <span class="resume-icon">CV</span>
+            Resume
+          </a>
         </div>
       </section>
 
@@ -70,9 +74,9 @@
         <h2 class="section-title">Experience</h2>
       </section>
 
-      <!-- Skills -->
+      <!-- Methods -->
       <section id="skills">
-        <h2 class="section-title">Skills</h2>
+        <h2 class="section-title">Methods</h2>
       </section>
 
       <!-- Contact -->
@@ -89,9 +93,8 @@
     <!-- Footer -->
     <footer>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#skills">Methods</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <p class="copyright">Copyright &#169; 2024 Logan Tang. All Rights Reserved</p>
