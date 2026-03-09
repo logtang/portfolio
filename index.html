@@ -1,133 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logan Tang's Portfolio</title>
-    <link rel = "stylesheet" href = "style.css"/>
-    <link rel = "stylesheet" href = "mediaqueries.css"/>
- </head>
- <body>
-    <!-- Desktop Nav -->
-    <nav id = "desktop-nav">
-        <div class="logo">Logan Tang</div>
-        <div>
-            <ul class = "nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="mediaqueries.css"/>
+  </head>
+  <body>
+
+    <!-- Nav -->
+    <nav id="desktop-nav">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
-    <!-- Mobile Nav -->
-    <nav id = "hamburger-nav">
-        <div class="logo">Logan Tang</div>
-        <div class="hamburger-menu">
-            <div class = "hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-            </div>
+    <nav id="hamburger-nav">
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
         </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
     </nav>
 
-    <!-- Landing -->
-    <section id="profile">
-        <div class="section_pic-container">
-            <img src="./Assets/portrait.png" alt="Logan Tang's portrait">
+    <main>
+
+      <!-- Profile / Hero -->
+      <section id="profile">
+        <img src="./Assets/portrait.png" alt="Logan Tang's portrait" class="profile-pic">
+        <h1>Logan Tang</h1>
+        <p class="subtitle">studying Statistics and Data Visualization</p>
+        <div class="btn-container">
+          <button class="btn btn-outline" onclick="window.open('./Assets/Resume.pdf')">Download Resume</button>
+          <button class="btn btn-filled" onclick="location.href='./#contact'">Contact</button>
         </div>
-        <div class="section_text">
-            <p class="section_text_p1">Hello, I'm</p>
-            <h1 class="title">Logan Tang</h1>
-            <p class="section_text_p2">studying Statistics and Data Visualization</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./Assets/Resume.pdf')">Download Resume</button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact</button>
-            </div>
-            <div id="socials-container">
-                <img src="./Assets/github.png" 
-                alt="My Github profile" 
-                class="icon" 
-                onclick="location.href='https://github.com/logtang'">
-                <img src="./Assets/linkedin.png" 
-                alt="My LinkedIn profile" 
-                class="icon" 
-                onclick="location.href='www.google.com'">
-            </div>
+        <div class="socials">
+          <img src="./Assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/logtang'">
+          <img src="./Assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='www.google.com'">
         </div>
-    </section>
-    <!-- About Me -->
-    <section id="about">
-        <p class="section_text_p1">Get To Know More</p>
-        <h1 class="title">About Me</h1>
-        <div class="section-container">
-            <div class="section_pic-container">
-                <img src="./Assets/headshot.png" alt="Profile picture">
-            </div>
-            <div class="about-details-container">
-                <div class="about-details-container"> 
-                    <h3>Education</h3>
-                    <p>
-                        B.S. Statistics
-                    </p>
-                    <br>
-                </div>
-                <div class="about-details-container">
-                    <p>
-                        Summary, Part 1
-                    </p>
-                    <br>
-                    <p>
-                        Summary, Part 2
-                    </p>
-                </div>
-            </div>
+      </section>
+
+      <!-- About Me -->
+      <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-body">
+          <img src="./Assets/headshot.png" alt="Profile picture" class="about-pic">
+          <div class="about-text">
+            <h3>Education</h3>
+            <p>B.S. Statistics</p>
+            <br>
+            <p>Summary, Part 1</p>
+            <br>
+            <p>Summary, Part 2</p>
+          </div>
         </div>
-    </section>
-    <!-- Experience -->
-    <section id="experience">
-        <p class="section_text_p1">Explore My</p>
-        <h1 class="title">Experience</h1>
-        
-    </section>
-    <!-- Skills -->
-    <section id="skills">
-        <p class="section_text_p1">Explore My</p>
-        <h1 class="title">Skills</h1>
-    </section>
-    <!-- Contact -->
-    <section id="contact">
-        <p class="section_text_p1">Get in Touch</p>
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-info-upper-container">
-            <div class="contact-info-container">
-                <img src="./Assets/email.png" alt="Email icon" class="icon contact-icon">
-                <p><a href="mailto:log.gstang@gmail.com">log.gstang@gmail.com</a></p>
-            </div>
-        </div>
-    </section>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience">
+        <h2 class="section-title">Experience</h2>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills">
+        <h2 class="section-title">Skills</h2>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="contact-line">
+          <img src="./Assets/email.png" alt="Email icon" class="icon inline-icon">
+          <a href="mailto:log.gstang@gmail.com">log.gstang@gmail.com</a>
+        </p>
+      </section>
+
+    </main>
 
     <!-- Footer -->
     <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class = "nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-        <p>Copyright &#169; 2024 Logan Tang. All Rights Reserved</p>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="copyright">Copyright &#169; 2024 Logan Tang. All Rights Reserved</p>
     </footer>
-    <script src = "script.js"></script>
- </body>
-</html> 
+
+    <script src="script.js"></script>
+  </body>
+</html>
