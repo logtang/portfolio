@@ -42,7 +42,7 @@ Legend: `[x]` done · `[-]` skipped · `[ ]` to do
 - [ ] B11. About content (hand-written, or from `00 - About Me/00.qmd`)
 
 ### Phase C — Repo hygiene
-- [ ] C1. Add `.DS_Store` to `.gitignore`
+- [x] C1. Add `.DS_Store` to `.gitignore`
 - [ ] C2. Update the tree above to match reality, and document the `.complete` workflow
 - [ ] C3. Commits
 
