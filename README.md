@@ -34,7 +34,7 @@ Legend: `[x]` done · `[-]` skipped · `[ ]` to do
 - [x] B3. `writeups.html`
 - [x] B4. `apps.html`
 - [x] B5. Empty `style.css`, linked from all pages
-- [ ] B6. Intro line + Resume link on `index.html`
+- [x] B6. Intro line + Resume link on `index.html`
 - [ ] B7. Add `resume.pdf`
 - [ ] B8. List write-ups on `writeups.html`
 - [ ] B9. "← Logan Tang" back-link inside each write-up (via Quarto `include-before-body`)
