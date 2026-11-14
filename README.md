@@ -65,10 +65,10 @@ Legend: `[x]` done · `[-]` skipped · `[ ]` to do
 
 ### Phase D — Deploy
 - [x] D1. Confirm GitHub username: `logtang` (from `gh auth status`)
-- [ ] D2. Create `<username>.github.io` repo
-- [ ] D3. Add remote, push
-- [ ] D4. Enable Pages (main / root)
-- [ ] D5. Click through the live site
+- [x] D2. Created `logtang/logtang.github.io` (public, via `gh repo create`)
+- [x] D3. Add remote, push
+- [x] D4. Enable Pages (main / root)
+- [x] D5. Live at https://logtang.github.io — all pages 200 except `resume.pdf` (B7)
 
 ### Phase E — Later
 - [ ] Design, favicon, 404 page, matching the Quarto look to the hand-written pages
