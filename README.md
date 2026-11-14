@@ -36,7 +36,7 @@ Legend: `[x]` done · `[-]` skipped · `[ ]` to do
 - [x] B5. Empty `style.css`, linked from all pages
 - [x] B6. Intro line + Resume link on `index.html`
 - [ ] B7. Add `resume.pdf`
-- [ ] B8. List write-ups on `writeups.html`
+- [x] B8. List write-ups on `writeups.html`
 - [ ] B9. "← Logan Tang" back-link inside each write-up (via Quarto `include-before-body`)
 - [ ] B10. List Streamlit apps on `apps.html`
 - [ ] B11. About content (hand-written, or from `00 - About Me/00.qmd`)
