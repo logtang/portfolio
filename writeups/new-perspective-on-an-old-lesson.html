@@ -2436,6 +2436,7 @@ window.Quarto = {
 </nav>
 </div>
 <main class="content" id="quarto-document-content">
+<p><a href="../index.html">← Logan Tang</a></p>
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -2494,7 +2495,7 @@ An alternative rule of thumb A general framework for real-life analysis</p>
 .separated-tables .quarto-layout-row { display: flex; gap: 24px; }
 .separated-tables .quarto-layout-row > div { flex: 1; min-width: 0; }
 </style>
-<div id="1098ee55" class="cell separated-tables quarto-layout-panel" data-execution_count="1" data-layout-ncol="4">
+<div id="9e9044aa" class="cell separated-tables quarto-layout-panel" data-layout-ncol="4" data-execution_count="1">
 <div class="quarto-layout-row">
 <div>
 
@@ -2783,7 +2784,7 @@ Figure 3: Anscombe’s quartet (again)
 <p>That sounds complicated, but statistical techniques can be simple. Like computing the summary statistics. Or plotting the data. Or fitting a baseline model.</p>
 <p>A simple example of this is if we have the salaries of all employees of a company (in thousands of dollars).</p>
 <p>Without looking at the data, we quickly compute the mean:</p>
-<div id="f6c6ac19" class="cell" data-execution_count="3">
+<div id="a6554df5" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>salaries.mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>np.float64(251.66666666666666)</code></pre>
@@ -2793,7 +2794,7 @@ Figure 3: Anscombe’s quartet (again)
 <p>Just using my judgment, $<span class="math inline">\(250,000\)</span> does <strong>not</strong> seem like a fair representation of the “average” salary at the company.</p>
 <p>I don’t think so.</p>
 <p>So we decide to inspect the data:</p>
-<div id="1adf68ec" class="cell" data-execution_count="4">
+<div id="f9feda5e" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>salaries</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>array([  70,   60,   80,   50,   50, 1200])</code></pre>
@@ -2805,7 +2806,7 @@ Figure 3: Anscombe’s quartet (again)
 <p>So what we can do is we can use <strong>another</strong> statistical techniques to make up for the weaknesses of another.</p>
 <p>So let me introduce you to the “trimmed mean”, which is the natural compliment of the everyday mean. It’s for when you suspect there are outliers in the dataset. When sort your values, the trimmed mean just drops some of the lowest and highest values from either end before computing the average.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>Let’s quickly compute the trimmed mean of our dataset. You can see that here:</p>
-<div id="a978c1ad" class="cell" data-execution_count="5">
+<div id="4494157c" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> trim_mean</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>trim_mean(salaries, <span class="fl">0.2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
