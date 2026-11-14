@@ -31,7 +31,7 @@ Legend: `[x]` done · `[-]` skipped · `[ ]` to do
 ### Phase B — Site skeleton (zero design)
 - [x] B1. `<nav>` on `index.html` (Home · About · Write-ups · Apps)
 - [x] B2. `about.html`
-- [ ] B3. `writeups.html`
+- [x] B3. `writeups.html`
 - [ ] B4. `apps.html`
 - [ ] B5. Empty `style.css`, linked from all pages
 - [ ] B6. Intro line + Resume link on `index.html`
