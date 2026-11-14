@@ -3,7 +3,6 @@ logtang.github.io/
 ├── index.html          ← landing page (intro, resume link)
 ├── about.html          ← About me
 ├── writeups.html       ← list linking to each write-up
-├── apps.html           ← list linking to each Streamlit app
 ├── style.css           ← shared look for the hand-written pages (empty for now)
 ├── resume.pdf
 └── writeups/           ← rendered write-ups only; no .qmd lives here
@@ -46,16 +45,16 @@ Legend: `[x]` done · `[-]` skipped · `[ ]` to do
 - [ ] Cleanup: delete unused `writeups/01_files/`, `02_files/`, `02_images/` (never committed; `*_files/` is gitignored)
 
 ### Phase B — Site skeleton (zero design)
-- [x] B1. `<nav>` on `index.html` (Home · About · Write-ups · Apps)
+- [x] B1. `<nav>` on `index.html` (Home · About · Write-ups)
 - [x] B2. `about.html`
 - [x] B3. `writeups.html`
-- [x] B4. `apps.html`
+- [-] B4. `apps.html` (created, later removed)
 - [x] B5. Empty `style.css`, linked from all pages
 - [x] B6. Intro line + Resume link on `index.html`
 - [ ] B7. Add `resume.pdf`
 - [x] B8. List write-ups on `writeups.html`
 - [x] B9. "← Logan Tang" back-link inside each write-up (via Quarto `include-before-body`)
-- [ ] B10. List Streamlit apps on `apps.html`
+- [-] B10. Apps page removed
 - [ ] B11. About content (hand-written, or from `00 - About Me/00.qmd`)
 
 ### Phase C — Repo hygiene
