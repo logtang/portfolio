@@ -32,7 +32,7 @@ Legend: `[x]` done · `[-]` skipped · `[ ]` to do
 - [x] B1. `<nav>` on `index.html` (Home · About · Write-ups · Apps)
 - [x] B2. `about.html`
 - [x] B3. `writeups.html`
-- [ ] B4. `apps.html`
+- [x] B4. `apps.html`
 - [ ] B5. Empty `style.css`, linked from all pages
 - [ ] B6. Intro line + Resume link on `index.html`
 - [ ] B7. Add `resume.pdf`
