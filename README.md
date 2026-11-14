@@ -1,24 +1,41 @@
 ```
-logatang.github.io/
+logtang.github.io/
 ├── index.html          ← landing page (intro, resume link)
 ├── about.html          ← About me
-├── writeups.html       ← cards linking to each write-up
-├── apps.html           ← cards linking to each Streamlit app
-├── style.css           ← shared look for your hand-written pages
+├── writeups.html       ← list linking to each write-up
+├── apps.html           ← list linking to each Streamlit app
+├── style.css           ← shared look for the hand-written pages (empty for now)
 ├── resume.pdf
-└── writeups/
-    ├── anscombe.qmd    ← what you write
-    ├── anscombe.html   ← what Quarto produces (what visitors see)
-    ├── kaggle.qmd
-    └── kaggle.html
+└── writeups/           ← rendered write-ups only; no .qmd lives here
+    ├── statistics-for-normal-people.html
+    └── new-perspective-on-an-old-lesson.html
 ```
+
+## Publishing a write-up
+
+Write-ups are written and rendered in `~/pers/projects/datablog`.
+`datablog/.complete` is a symlink to this repo's `writeups/` folder.
+
+1. In the `.qmd` front matter, under `format: html:`, make sure these are set:
+   ```yaml
+   embed-resources: true          # one self-contained .html, no _files/ folder
+   include-before-body:
+       text: |
+           <p><a href="../index.html">← Logan Tang</a></p>
+   ```
+2. Render with the datablog venv:
+   `QUARTO_PYTHON=../.venv/bin/python quarto render NN.qmd`
+3. Copy under a descriptive name (the name becomes the URL):
+   `cp "NN - Title/NN.html" .complete/some-descriptive-name.html`
+4. Add an `<li>` for it on `writeups.html`.
+5. Commit and push this repo.
 
 ## Progress ledger
 
 Legend: `[x]` done · `[-]` skipped · `[ ]` to do
 
 ### Phase A — Self-contained write-ups (datablog side)
-- [x] Removed accidental self-looping symlink `writeups/writeups` (staged, not committed)
+- [x] Removed accidental self-looping symlink `writeups/writeups`
 - [x] A1. `01.qmd`: added `embed-resources: true`, re-rendered, copied over
 - [x] A2. `02.qmd`: same; images now embedded
 - [-] A3. `03.qmd` (Regression Done Right): not ready to publish
@@ -26,7 +43,7 @@ Legend: `[x]` done · `[-]` skipped · `[ ]` to do
 - [x] A5. Renamed to descriptive URLs:
   - `01.html` → `writeups/statistics-for-normal-people.html`
   - `02.html` → `writeups/new-perspective-on-an-old-lesson.html`
-- [ ] Cleanup: delete unused `writeups/01_files/`, `02_files/`, `02_images/`
+- [ ] Cleanup: delete unused `writeups/01_files/`, `02_files/`, `02_images/` (never committed; `*_files/` is gitignored)
 
 ### Phase B — Site skeleton (zero design)
 - [x] B1. `<nav>` on `index.html` (Home · About · Write-ups · Apps)
@@ -43,11 +60,11 @@ Legend: `[x]` done · `[-]` skipped · `[ ]` to do
 
 ### Phase C — Repo hygiene
 - [x] C1. Add `.DS_Store` to `.gitignore`
-- [ ] C2. Update the tree above to match reality, and document the `.complete` workflow
-- [ ] C3. Commits
+- [x] C2. Update the tree above to match reality, and document the `.complete` workflow
+- [x] C3. Commits (one per step)
 
 ### Phase D — Deploy
-- [ ] D1. Confirm GitHub username (`logatang` vs `logtang`)
+- [x] D1. Confirm GitHub username: `logtang` (from `gh auth status`)
 - [ ] D2. Create `<username>.github.io` repo
 - [ ] D3. Add remote, push
 - [ ] D4. Enable Pages (main / root)
