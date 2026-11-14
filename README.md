@@ -26,8 +26,10 @@ Write-ups are written and rendered in `~/pers/projects/datablog`.
    `QUARTO_PYTHON=../.venv/bin/python quarto render NN.qmd`
 3. Copy under a descriptive name (the name becomes the URL):
    `cp "NN - Title/NN.html" .complete/some-descriptive-name.html`
-4. Add an `<li>` for it on `writeups.html`.
-5. Commit and push this repo.
+4. Add an `<li>` for it on `writeups.html` (and `index.html`), including
+   `<span class="readtime" data-src="writeups/some-descriptive-name.html"></span>`.
+5. Run `python3 readtime.py` to fill in the "N min read" estimates.
+6. Commit and push this repo.
 
 ## Progress ledger
 

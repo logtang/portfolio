@@ -4,27 +4,48 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Write-ups — Logan Tang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..600&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="writeups.html">Write-ups</a>
-  </nav>
+  <div class="page">
+    <header class="site-header">
+      <a class="site-name" href="index.html">Logan Tang</a>
+      <nav>
+        <a href="about.html">About</a>
+        <a href="writeups.html" aria-current="page">Write-ups</a>
+      </nav>
+    </header>
 
-  <h1>Write-ups</h1>
-  <ul>
-    <li>
-      <a href="writeups/statistics-for-normal-people.html">Statistics for Normal People</a>
-      — What to think of the "data-driven" world
-    </li>
-    <li>
-      <a href="writeups/new-perspective-on-an-old-lesson.html">A New Perspective on an Old Lesson</a>
-      — A rebuttal to "Always plot your data"
-    </li>
-  </ul>
+    <main>
+      <h1>Write-ups</h1>
+      <p class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+      <ul class="index" style="margin-top: 2rem">
+        <li>
+          <span class="year">2026</span>
+          <span>
+            <a href="writeups/statistics-for-normal-people.html">Statistics for Normal People</a>
+            <span class="desc">What to think of the "data-driven" world</span>
+          </span>
+          <span class="readtime" data-src="writeups/statistics-for-normal-people.html">13 min read</span>
+        </li>
+        <li>
+          <span class="year">2026</span>
+          <span>
+            <a href="writeups/new-perspective-on-an-old-lesson.html">A New Perspective on an Old Lesson</a>
+            <span class="desc">A rebuttal to "Always plot your data"</span>
+          </span>
+          <span class="readtime" data-src="writeups/new-perspective-on-an-old-lesson.html">12 min read</span>
+        </li>
+      </ul>
+    </main>
+
+    <footer class="site-footer">© 2026 Logan Tang</footer>
+  </div>
 </body>
 
 </html>
