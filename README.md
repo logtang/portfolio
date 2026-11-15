@@ -1,9 +1,13 @@
 ```
 logtang.github.io/
-├── index.html          ← landing page (intro, resume link)
-├── about.html          ← About me
-├── writeups.html       ← list linking to each write-up
-├── style.css           ← shared look for the hand-written pages (empty for now)
+├── index.html          ← redirects to pages/landing.html
+├── pages/
+│   ├── landing.html    ← landing page (intro, experience, writing, links)
+│   ├── about.html      ← About me
+│   ├── research.html   ← papers, projects
+│   └── writeups.html   ← list linking to each write-up
+├── media/              ← images for hand-written pages (landing/headshot.jpg)
+├── style.css           ← shared look for the hand-written pages
 ├── resume.pdf
 └── writeups/           ← rendered write-ups only; no .qmd lives here
     ├── statistics-for-normal-people.html
@@ -26,8 +30,8 @@ Write-ups are written and rendered in `~/pers/projects/datablog`.
    `QUARTO_PYTHON=../.venv/bin/python quarto render NN.qmd`
 3. Copy under a descriptive name (the name becomes the URL):
    `cp "NN - Title/NN.html" .complete/some-descriptive-name.html`
-4. Add an `<li>` for it on `writeups.html` (and `index.html`), including
-   `<span class="readtime" data-src="writeups/some-descriptive-name.html"></span>`.
+4. Add an `<li>` for it on `pages/writeups.html` (and `pages/landing.html`), including
+   `<span class="readtime" data-src="../writeups/some-descriptive-name.html"></span>`.
 5. Run `python3 readtime.py` to fill in the "N min read" estimates.
 6. Commit and push this repo.
 

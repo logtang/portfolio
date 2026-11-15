@@ -6,9 +6,9 @@ Usage:  python3 readtime.py
 For every write-up in writeups/, counts the words inside Quarto's
 <main id="quarto-document-content">, then rewrites any element like
 
-    <span class="readtime" data-src="writeups/foo.html">…</span>
+    <span class="readtime" data-src="../writeups/foo.html">…</span>
 
-in the hand-written pages so its text reads "N min read".
+in the hand-written pages (data-src is relative to the page) so its text reads "N min read".
 
 Estimate: prose at 230 wpm, code at 1/3 that speed (people skim it,
 but slowly), plus 12 s per image/figure. Rounded up, minimum 1 min.
@@ -21,7 +21,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-PAGES = ["index.html", "writeups.html"]
+PAGES = ["pages/landing.html", "pages/writeups.html"]
 
 WPM = 230
 CODE_SLOWDOWN = 3
@@ -100,19 +100,19 @@ SPAN = re.compile(
 def main():
     cache = {}
 
-    def stamp(m):
-        src = m.group(2)
+    def stamp(m, page_dir):
+        src = (page_dir / m.group(2)).resolve()
         if src not in cache:
-            mins, c = minutes(ROOT / src)
+            mins, c = minutes(src)
             cache[src] = mins
-            print(f"{src}: {c.prose_words} prose + {c.code_words} code words, "
+            print(f"{src.relative_to(ROOT)}: {c.prose_words} prose + {c.code_words} code words, "
                   f"{c.images} images -> {mins} min")
         return f"{m.group(1)}{cache[src]} min read{m.group(4)}"
 
     for page in PAGES:
         p = ROOT / page
         text = p.read_text(encoding="utf-8")
-        new = SPAN.sub(stamp, text)
+        new = SPAN.sub(lambda m: stamp(m, p.parent), text)
         if new != text:
             p.write_text(new, encoding="utf-8")
             print(f"updated {page}")
