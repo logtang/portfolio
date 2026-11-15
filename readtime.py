@@ -21,7 +21,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-PAGES = ["pages/landing.html", "pages/writeups.html"]
+PAGES = ["pages/writeups.html"]
 
 WPM = 230
 CODE_SLOWDOWN = 3
