@@ -2,13 +2,13 @@
 logtang.github.io/
 ├── index.html          ← redirects to pages/landing.html
 ├── pages/
-│   ├── landing.html    ← landing page (intro, experience, writing, links)
+│   ├── landing.html    ← landing page (intro, experience, links)
 │   ├── about.html      ← About me
-│   ├── research.html   ← papers, projects
+│   ├── research.html   ← papers
+│   ├── projects.html   ← tools, dashboards
 │   └── writeups.html   ← list linking to each write-up
-├── media/              ← images for hand-written pages (landing/headshot.jpg)
+├── media/              ← images for hand-written pages + resume.pdf
 ├── style.css           ← shared look for the hand-written pages
-├── resume.pdf
 └── writeups/           ← rendered write-ups only; no .qmd lives here
     ├── statistics-for-normal-people.html
     └── new-perspective-on-an-old-lesson.html
@@ -57,7 +57,7 @@ Legend: `[x]` done · `[-]` skipped · `[ ]` to do
 - [-] B4. `apps.html` (created, later removed)
 - [x] B5. Empty `style.css`, linked from all pages
 - [x] B6. Intro line + Resume link on `index.html`
-- [ ] B7. Add `resume.pdf`
+- [x] B7. Add `resume.pdf` (at `media/resume.pdf`)
 - [x] B8. List write-ups on `writeups.html`
 - [x] B9. "← Logan Tang" back-link inside each write-up (via Quarto `include-before-body`)
 - [-] B10. Apps page removed
