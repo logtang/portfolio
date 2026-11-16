@@ -9,6 +9,7 @@
    6. Index list      year / title / description rows (Research, Projects, Write-ups)
                       6a. read time   6b. link row   6c. thumbnails
    7. Small lists     .links (inline links), .facts (label / value rows)
+   8. Timeline        commit-graph style job + projects (landing Experience)
 
    Small-screen overrides (max-width: 480px) sit at the end of each section,
    right after the rules they change.
@@ -328,4 +329,87 @@ p { margin: 0 0 1rem; }
 @media (max-width: 480px) {
   .facts { grid-template-columns: 1fr; gap: 0; }
   .facts dd { margin-bottom: 0.75rem; }
+}
+
+
+/* 8. Timeline -------------------------------------------------------------- */
+
+/* Each <li> draws its own piece of the vertical line (::before) and its dot
+   (::after). The line starts at the first dot and stops at the last one. */
+.timeline {
+  --tl-dot: 11px;
+  --tl-mid: 0.8rem;   /* vertical center of a row's first line of text */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline li {
+  position: relative;
+  padding: 0 0 1.5rem 1.75rem;
+}
+
+.timeline li:last-child { padding-bottom: 0; }
+
+.timeline li::before {   /* line */
+  content: "";
+  position: absolute;
+  left: calc(var(--tl-dot) / 2 - 0.5px);
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--faint);
+}
+
+.timeline li:first-child::before { top: var(--tl-mid); }
+.timeline li:last-child::before { bottom: auto; height: var(--tl-mid); }
+.timeline li:only-child::before { display: none; }
+
+.timeline li::after {    /* dot: hollow for projects */
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(var(--tl-mid) - var(--tl-dot) / 2);
+  width: var(--tl-dot);
+  height: var(--tl-dot);
+  border: 1.5px solid var(--text);
+  border-radius: 50%;
+  background: var(--bg);   /* covers the line behind the dot */
+}
+
+.timeline .tl-head::after { background: var(--text); }   /* filled for the job */
+
+/* start date: a smaller filled dot that ends the line, like a root commit */
+.timeline .tl-start::after {
+  --tl-start-dot: 7px;
+  left: calc((var(--tl-dot) - var(--tl-start-dot)) / 2);
+  top: calc(var(--tl-mid) - var(--tl-start-dot) / 2);
+  width: var(--tl-start-dot);
+  height: var(--tl-start-dot);
+  border: 0;
+  background: var(--faint);
+}
+
+.tl-start .tl-title { color: var(--faint); }
+
+.tl-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0 1rem;
+}
+
+.tl-head .tl-title { font-weight: 500; }
+
+.tl-date {
+  color: var(--faint);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.tl-caption {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
 }
