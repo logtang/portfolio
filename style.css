@@ -52,7 +52,7 @@ html {
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
-  scroll-padding-top: 4.5rem;   /* nav jumps land below the sticky header */
+  scroll-padding-top: 1.5rem;   /* small breathing room above a section after a nav jump */
 }
 
 body {
@@ -92,18 +92,13 @@ a:hover { text-decoration-color: currentColor; }
 
 main { flex: 1; }   /* pushes the footer to the bottom on short pages */
 
-/* Sticky header: stays on screen while the single page scrolls */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   gap: 1rem;
   margin-bottom: 4rem;
   padding: 1rem 0;
-  background: var(--bg);
   border-bottom: 1px solid var(--rule);
 }
 
