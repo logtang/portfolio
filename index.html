@@ -2,11 +2,234 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Logan Tang</title>
-  <meta http-equiv="refresh" content="0; url=pages/landing.html">
-  <link rel="canonical" href="pages/landing.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..600&display=swap">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <p><a href="pages/landing.html">Logan Tang</a></p>
+  <div class="page">
+    <header class="site-header">
+      <a class="site-name" href="#top">Home</a>
+      <nav>
+        <a href="#experience">Experience</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#writeups">Write-ups</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Photo at media/landing/headshot.jpg, shown uncropped at its own aspect ratio. -->
+      <div class="intro" id="top">
+        <div class="portrait-col">
+          <div class="portrait">
+            <img src="media/landing/headshot.jpg" alt="Logan Tang" width="800" height="600"
+                 onerror="this.remove()">
+          </div>
+          <ul class="links contact">
+            <li><a href="media/resume.pdf">Resume</a></li>
+            <li><a href="https://github.com/logtang">GitHub</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h1 class="greeting">Hi, my name is Logan!</h1>
+          <p class="lede">
+            I'm a statistics graduate from UC Davis where I spent most of my time as a researcher and analyst
+            at the VIDI Lab. Here you can get a glimpse at the projects I've contributed to. My work ranges from
+            pilot studies to handling significantly larger data, at the order of tens of millions of observations.
+          </p>
+          <p class="lede muted">B.S. Statistics, University of California, Davis <br>
+          2022 - 2026</p>
+        </div>
+      </div>
+
+      <!-- 1. Experience ===================================================== -->
+      <section id="experience">
+        <h2 class="section-head"><span class="num">01</span>Experience</h2>
+        <!-- Timeline: the first <li class="tl-head"> is the job (filled dot);
+             each following <li> is one project (hollow dot), newest first.
+             Copy a project <li> to add another; the line connects them automatically. -->
+        <ol class="timeline">
+          <li class="tl-head">
+            <div class="tl-row">
+              <span class="tl-title">Researcher · VIDI Lab, UC Davis</span>
+              <span class="tl-date">2026</span>
+            </div>
+          </li>
+          <li>
+            <div class="tl-row">
+              <span class="tl-title">Modeling Tabular Data @ Fermilab</span>
+              <span class="tl-date">2025 – now</span>
+            </div>
+            <p class="tl-caption">Modeling job failures across 64 million high-energy physics jobs.</p>
+          </li>
+          <li>
+            <div class="tl-row">
+              <span class="tl-title">Developing an AI-Powered Analysis Tool @ COEQWAL Initiative</span>
+              <span class="tl-date">2025</span>
+            </div>
+            <p class="tl-caption">Built and presented an interface for an AI policy analysis platform.</p>
+          </li>
+          <li>
+            <div class="tl-row">
+              <span class="tl-title">Modeling "Engagement" (User Acceptance)</span>
+              <span class="tl-date">2024 – 2025</span>
+            </div>
+            <p class="tl-caption">Led a 57-person user study of bottle-shaped glyphs for California water
+              data, published at IEEE VIS 2025.</p>
+          </li>
+          <li class="tl-start">
+            <div class="tl-row">
+              <span class="tl-title">Joined VIDI Lab</span>
+              <span class="tl-date">Sep 2024</span>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- 2. Research ======================================================= -->
+      <section id="research">
+        <h2 class="section-head"><span class="num">02</span>Research</h2>
+        <p>
+          I work at the VIDI Lab at UC Davis on two kinds of problems. The first is
+          communicating complex scientific data to non-experts: designing visualizations of
+          California's water supply that people outside the field can read, then testing
+          whether they actually work. The second is predictive modeling of scientific computing
+          workloads: with Fermilab, we study which job outcomes in a federated batch system
+          can honestly be predicted, and how standard evaluation protocols overstate it.
+        </p>
+
+        <h3>Interests</h3>
+        <p class="muted">Public-facing visualization · Uncertainty communication · User studies ·
+          Tabular machine learning · Evaluation methodology</p>
+
+        <h3>Papers</h3>
+        <ul class="index">
+          <li>
+            <span class="year">2026</span>
+            <span>
+              <span class="title">Predictive Modeling of High Energy Physics Workflows on Federated HPC Batch Systems</span>
+              <span class="desc">A. Austin, L. Tang, J. Mueller, A. Norman, K.-L. Ma. Manuscript.
+                A framework for predicting queue wait time, job failure, and fault attribution from
+                64 million Fermilab jobs across 46 sites, using only features known when the prediction
+                is made and a chronological train/test split. Random splits overstated failure recall
+                badly: an XGBoost model expected to catch 88.9% of failures caught only 66.2%.</span>
+              <span class="refs"><a href="media/papers/hep-workflow-prediction.pdf">PDF</a><a href="https://github.com/allisonaustin/batch-queue-prediction">Code</a><a href="media/papers/hep-job-analysis-slides.pdf">Slides</a></span>
+            </span>
+          </li>
+          <li>
+            <span class="year">2025</span>
+            <span>
+              <span class="title">Watering the Future: Assessing a Visualization Design for Accessible Comprehension of Water Management</span>
+              <span class="desc">Co-author. <em>IEEE VIS 2025</em>. Bottle-shaped "gradient glyphs" and
+                droplet dotplots as an alternative to exceedance plots for California Central Valley water
+                allocation data. In a 57-participant study, the glyphs matched exceedance plots on
+                time-to-insight and scored significantly higher on novelty, attention, and discovery.</span>
+              <span class="refs"><a href="media/papers/watering-the-future.pdf">PDF</a></span>
+            </span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 3. Projects ======================================================= -->
+      <section id="projects">
+        <h2 class="section-head"><span class="num">03</span>Projects</h2>
+        <p>
+          Tools, dashboards, and other things I've built.
+        </p>
+
+        <ul class="index">
+          <li>
+            <span class="year">2025</span>
+            <span>
+              <span class="title">COEQWAL AI-enabled threshold analysis dashboard</span>
+              <span class="desc">Compares AI-generated and manually curated policy analysis across
+                water-resource outcome metrics.</span>
+              <span class="refs"><a href="https://github.com/logtang/coeqwal-dashboard">Code</a></span>
+            </span>
+          </li>
+
+          <!-- Template for a new project: copy this <li>, uncomment, and fill in.
+          <li>
+            <span class="year">YEAR</span>
+            <span>
+              <span class="title">Project name</span>
+              <span class="desc">One line on what it does.</span>
+              <span class="refs"><a href="URL">Demo</a><a href="URL">Code</a></span>
+            </span>
+          </li>
+          -->
+        </ul>
+      </section>
+
+      <!-- 4. Write-ups ====================================================== -->
+      <section id="writeups">
+        <h2 class="section-head"><span class="num">04</span>Write-ups</h2>
+        <p>
+          Essays on statistics and data, written for people outside the field.
+        </p>
+
+        <!-- Thumbnails sit at the end of each <li>; images live in media/thumbs/ (4:3, ~480×360).
+             An inline <svg> also works as a stand-in until a photo exists. -->
+        <ul class="index">
+          <li>
+            <span class="year">2026</span>
+            <span>
+              <a href="writeups/statistics-for-normal-people.html">Statistics for Normal People</a>
+              <span class="desc">What to think of the data-driven world</span>
+            </span>
+            <span class="readtime" data-src="writeups/statistics-for-normal-people.html">13 min read</span>
+            <a class="thumb" href="writeups/statistics-for-normal-people.html" tabindex="-1" aria-hidden="true">
+              <svg viewBox="0 0 72 54" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round">
+                <g fill="currentColor" stroke="none" opacity="0.18">
+                  <rect x="12" y="42" width="6" height="4"/>
+                  <rect x="19" y="34" width="6" height="12"/>
+                  <rect x="26" y="22" width="6" height="24"/>
+                  <rect x="33" y="14" width="6" height="32"/>
+                  <rect x="40" y="22" width="6" height="24"/>
+                  <rect x="47" y="34" width="6" height="12"/>
+                  <rect x="54" y="42" width="6" height="4"/>
+                </g>
+                <path d="M8 45.5 C22 45.5 27 11 36 11 C45 11 50 45.5 64 45.5"/>
+                <path d="M6 46 H66" opacity="0.5"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <span class="year">2026</span>
+            <span>
+              <a href="writeups/new-perspective-on-an-old-lesson.html">A New Perspective on an Old Lesson</a>
+              <span class="desc">A rebuttal to "Always plot your data"</span>
+            </span>
+            <span class="readtime" data-src="writeups/new-perspective-on-an-old-lesson.html">12 min read</span>
+            <a class="thumb" href="writeups/new-perspective-on-an-old-lesson.html" tabindex="-1" aria-hidden="true">
+              <img src="media/thumbs/new-perspective-on-an-old-lesson.jpg" alt="" width="480" height="360" loading="lazy">
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">© 2026 Logan Tang</footer>
+  </div>
+
+  <script>
+    // Highlight the nav link for the section currently in view.
+    const links = document.querySelectorAll('nav a[href^="#"]');
+    const io = new IntersectionObserver(entries => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        links.forEach(a => a.toggleAttribute('aria-current',
+          a.getAttribute('href') === '#' + e.target.id));
+      }
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    document.querySelectorAll('main section[id]').forEach(s => io.observe(s));
+  </script>
 </body>
+
 </html>

@@ -1,15 +1,15 @@
 /* ==========================================================================
-   Shared styles for the hand-written pages (pages/*.html).
+   Styles for the single-page site (index.html).
 
    1. Tokens          colors, sizes, dark mode
    2. Base            reset, body, links
    3. Layout          page column, header + nav, footer
    4. Typography      headings, paragraphs, helpers
-   5. Intro           landing-page portrait + greeting
-   6. Index list      year / title / description rows (Research, Projects, Write-ups)
+   5. Intro           portrait, contact links, greeting
+   6. Index list      year / title / description rows (Papers, Projects, Write-ups)
                       6a. read time   6b. link row   6c. thumbnails
    7. Small lists     .links (inline links), .facts (label / value rows)
-   8. Timeline        commit-graph style job + projects (landing Experience)
+   8. Timeline        commit-graph style job + projects (Experience section)
 
    Small-screen overrides (max-width: 480px) sit at the end of each section,
    right after the rules they change.
@@ -51,6 +51,8 @@
 html {
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;   /* nav jumps land below the sticky header */
 }
 
 body {
@@ -83,19 +85,26 @@ a:hover { text-decoration-color: currentColor; }
   max-width: var(--measure);
   min-height: 100vh;
   margin: 0 auto;
-  padding: 4.5rem var(--gutter) 3rem;
+  padding: 1.5rem var(--gutter) 3rem;
   display: flex;
   flex-direction: column;
 }
 
 main { flex: 1; }   /* pushes the footer to the bottom on short pages */
 
+/* Sticky header: stays on screen while the single page scrolls */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   gap: 1rem;
-  margin-bottom: 4.5rem;
+  margin-bottom: 4rem;
+  padding: 1rem 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
 }
 
 .site-name {
@@ -115,7 +124,7 @@ nav a {
 }
 
 nav a:hover,
-nav a[aria-current="page"] { color: var(--text); }
+nav a[aria-current] { color: var(--text); }   /* set by the scroll script */
 
 .site-footer {
   margin-top: 5rem;
@@ -145,7 +154,39 @@ h2 {
   margin: 3.5rem 0 1rem;
 }
 
+h3 {   /* small label inside a section (Interests, Papers) */
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  margin: 2.5rem 0 1rem;
+}
+
 p { margin: 0 0 1rem; }
+
+/* Numbered section header: "01  Experience" */
+section { margin-top: 5rem; }
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text);
+  margin: 0 0 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+
+.section-head .num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--faint);
+}
 
 .lede { max-width: 32rem; }
 
@@ -169,9 +210,19 @@ p { margin: 0 0 1rem; }
 .intro > div:last-child { flex: 1; min-width: 0; }   /* text column */
 .intro .lede:last-child { margin-bottom: 0; }
 
-.portrait {
+/* photo with the contact links underneath */
+.portrait-col {
   width: min(360px, 45%);
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact { font-size: 13px; }
+
+.portrait {
+  width: 100%;
   border-radius: 2px;
   overflow: hidden;
 }
@@ -194,7 +245,7 @@ p { margin: 0 0 1rem; }
 @media (max-width: 480px) {
   /* stack: photo on top at full width, greeting + text directly below */
   .intro { flex-direction: column; align-items: stretch; gap: 1.25rem; }
-  .portrait { width: 100%; }
+  .portrait-col { width: 100%; }
   .greeting { font-size: 1.35rem; margin-bottom: 0.5rem; }
 }
 
