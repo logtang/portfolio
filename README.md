@@ -7,7 +7,7 @@ logtang.github.io/
 │   ├── research.html   ← papers
 │   ├── projects.html   ← tools, dashboards
 │   └── writeups.html   ← list linking to each write-up
-├── media/              ← images for hand-written pages + resume.pdf
+├── media/              ← images for hand-written pages + resume.pdf, papers/ (PDFs linked from Research)
 ├── style.css           ← shared look for the hand-written pages
 └── writeups/           ← rendered write-ups only; no .qmd lives here
     ├── statistics-for-normal-people.html

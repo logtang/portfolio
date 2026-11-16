@@ -25,24 +25,41 @@
     <main>
       <h1>Research</h1>
       <p>
-        My research is on evaluating visualizations: designing studies that test whether
-        new visualization techniques actually help people understand complex data. At the
-        VIDI Lab I work on the COEQWAL initiative, which builds tools for analyzing
-        California water policy.
+        I work at the VIDI Lab at UC Davis on two kinds of problems. The first is
+        communicating complex scientific data to non-experts: designing visualizations of
+        California's water supply that people outside the field can read, then testing
+        whether they actually work. The second is predictive modeling of scientific computing
+        workloads: with Fermilab, we study which job outcomes in a federated batch system
+        can honestly be predicted, and how standard evaluation protocols overstate it.
       </p>
 
       <h2>Interests</h2>
-      <p class="muted">Visualization evaluation · User studies · Survey design · Policy analysis</p>
+      <p class="muted">Public-facing visualization · Uncertainty communication · User studies ·
+        Tabular machine learning · Evaluation methodology</p>
 
       <h2>Papers</h2>
       <ul class="index">
         <li>
+          <span class="year">2026</span>
+          <span>
+            <span class="title">Predictive Modeling of High Energy Physics Workflows on Federated HPC Batch Systems</span>
+            <span class="desc">A. Austin, L. Tang, J. Mueller, A. Norman, K.-L. Ma. Manuscript.
+              A framework for predicting queue wait time, job failure, and fault attribution from
+              64 million Fermilab jobs across 46 sites, using only features known when the prediction
+              is made and a chronological train/test split. Random splits overstated failure recall
+              badly: an XGBoost model expected to catch 88.9% of failures caught only 66.2%.</span>
+            <span class="refs"><a href="../media/papers/hep-workflow-prediction.pdf">PDF</a><a href="https://github.com/allisonaustin/batch-queue-prediction">Code</a><a href="../media/papers/hep-job-analysis-slides.pdf">Slides</a></span>
+          </span>
+        </li>
+        <li>
           <span class="year">2025</span>
           <span>
-            <!-- TODO: replace with the paper's actual title and add a PDF link -->
-            <span class="title">Evaluating novel visualization techniques for COEQWAL</span>
-            <span class="desc">Co-author. Peer-reviewed paper, <em>IEEE VIS 2025</em>. A mixed-methods
-              study with 57 participants measuring task performance, engagement, and cognitive load.</span>
+            <span class="title">Watering the Future: Assessing a Visualization Design for Accessible Comprehension of Water Management</span>
+            <span class="desc">Co-author. <em>IEEE VIS 2025</em>. Bottle-shaped "gradient glyphs" and
+              droplet dotplots as an alternative to exceedance plots for California Central Valley water
+              allocation data. In a 57-participant study, the glyphs matched exceedance plots on
+              time-to-insight and scored significantly higher on novelty, attention, and discovery.</span>
+            <span class="refs"><a href="../media/papers/watering-the-future.pdf">PDF</a></span>
           </span>
         </li>
       </ul>
