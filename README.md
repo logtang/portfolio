@@ -5,7 +5,10 @@ logtang.github.io/
 ├── style.css           ← styles for index.html
 └── writeups/           ← rendered write-ups only; no .qmd lives here
     ├── statistics-for-normal-people.html
-    └── new-perspective-on-an-old-lesson.html
+    ├── new-perspective-on-an-old-lesson.html
+    ├── explaining-linear-algebra-part1.html
+    ├── explaining-linear-algebra-part2.html
+    └── explaining-linear-regression.html
 ```
 
 ## Publishing a write-up
